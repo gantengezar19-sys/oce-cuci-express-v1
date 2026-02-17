@@ -1,14 +1,15 @@
+
+import './globals.css'
+
 export const metadata = {
-  title: "OCE Cuci Express",
-  description: "Laundry Express Profesional",
-};
+  title: 'Oce Cuci Express',
+  description: 'Laundry Cepat, Bersih & Wangi - Bogor',
+}
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
-      <body style={{margin:0,fontFamily:'Arial, sans-serif',scrollBehavior:'smooth'}}>
-        {children}
-      </body>
+    <html lang="en">
+      <body>{children}</body>
     </html>
-  );
+  )
 }
