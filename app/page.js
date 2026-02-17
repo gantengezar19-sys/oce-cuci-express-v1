@@ -1,45 +1,45 @@
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
+
 export default function Home() {
   return (
-    <main>
-      
-      <section style={{padding:'100px 20px',textAlign:'center',background:'#0ea5e9',color:'white'}}>
-        <h1>OCE Cuci Express</h1>
-        <p>Laundry Cepat • Bersih • Wangi</p>
-      </section>
+    <main className="bg-blue-50 text-gray-800">
+      <header className="bg-white shadow-md fixed w-full z-50">
+        <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
+          <div className="flex items-center gap-3">
+            <Image src="/oce-logo.jpg" alt="Oce Cuci Express" width={50} height={50} />
+            <h1 className="font-bold text-xl text-blue-600">Oce Cuci Express</h1>
+          </div>
+          <a href="https://wa.me/6287838088082" target="_blank"
+            className="bg-green-500 text-white px-4 py-2 rounded-xl hover:bg-green-600 transition">
+            Pesan Disini
+          </a>
+        </div>
+      </header>
 
-      <section style={{padding:'80px 20px',textAlign:'center'}}>
-        <h2>Pricelist</h2>
-        <p>Cuci Reguler: Rp7.000/kg</p>
-        <p>Cuci Express: Rp10.000/kg</p>
-        <p>Setrika: Rp5.000/kg</p>
-      </section>
+      <div className="h-20" />
 
-      <section style={{padding:'80px 20px',textAlign:'center',background:'#f1f5f9'}}>
-        <h2>Hubungi Kami</h2>
-        <p>Customer Service: 085129316312</p>
-      </section>
+      <motion.section variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+        className="text-center py-20 bg-gradient-to-r from-blue-500 to-cyan-400 text-white">
+        <h2 className="text-4xl font-bold mb-4">Laundry Cepat, Bersih & Wangi</h2>
+        <p className="mb-6">Gratis Antar Jemput Maks. 3 KM</p>
+        <p className="mt-4">Buka 08.00 – 20.00 | Berdiri Sejak 2024</p>
+      </motion.section>
 
-      <a href="https://wa.me/6285129316312" target="_blank"
-        style={{position:'fixed',bottom:'20px',right:'20px',background:'#25D366',
-        color:'white',padding:'15px 20px',borderRadius:'50px',
-        textDecoration:'none',fontWeight:'bold'}}>
-        WA Cabang 1
-      </a>
-
-      <a href="https://wa.me/6285129316312" target="_blank"
-        style={{position:'fixed',bottom:'80px',right:'20px',background:'#128C7E',
-        color:'white',padding:'15px 20px',borderRadius:'50px',
-        textDecoration:'none',fontWeight:'bold'}}>
-        WA Cabang 2
-      </a>
-
-      <a href="https://www.google.com/maps" target="_blank"
-        style={{position:'fixed',bottom:'140px',right:'20px',background:'#ef4444',
-        color:'white',padding:'15px 20px',borderRadius:'50px',
-        textDecoration:'none',fontWeight:'bold'}}>
-        Maps
-      </a>
-
+      <footer className="bg-blue-600 text-white py-10 text-center mt-20">
+        <p>Cabang 1: Cimahpar, Kec. Bogor Utara, Kota Bogor</p>
+        <p>WA: 0878-3808-8082</p>
+        <p className="mt-4">Cabang 2: Jl. Babakan Indobaso, Cimahpar, Kota Bogor</p>
+        <p>WA: 0819-1014-1717</p>
+        <p className="mt-4">Customer Service: 0851-2931-6312</p>
+        <p className="mt-4 text-sm">© 2024 Oce Cuci Express</p>
+      </footer>
     </main>
   );
 }
